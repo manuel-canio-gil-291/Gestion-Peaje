@@ -25,13 +25,11 @@ public abstract class Ticket implements ITicket {
         return porcentaje;
     }
 
-    public float calculoKmRecorrido(float kmEntrada, float kmSalida) {
-        float kmRecorrido = (float)Math.abs(kmSalida-kmEntrada);
-        calculoTarifa(kmRecorrido, precio, porcentaje);
-        return kmRecorrido;
-    }
+    public abstract float calculoKmRecorrido(float kmEntrada, float kmSalida, float precio, float porcentaje);
 
     public abstract float registroFinal(float kmSalida);
+
+    public abstract float registroInicial(float kmEntrada);
 
     @Override
     public float calculoTarifa(float kmRecorrido, float precio, float porcentaje) {
