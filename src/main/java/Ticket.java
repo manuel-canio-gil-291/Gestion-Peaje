@@ -1,12 +1,13 @@
 package main.java;
 
 public abstract class Ticket implements ITicket {
-    private float kmEntrada;
-    private float kmSalida;
-    private float tarifa=0.00f;
+    private final int kmEntrada;
+    private final float porcentaje;
 
-    public Ticket(float kmEntrada, float tarifa) {
+    protected Ticket(int kmEntrada, float porcentaje) {
         this.kmEntrada = kmEntrada;
-        this.tarifa = tarifa;
+        this.porcentaje = porcentaje;
     }
+
+    public abstract float registroFinal(int kmSalida);
 }
